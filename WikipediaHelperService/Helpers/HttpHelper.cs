@@ -25,6 +25,9 @@ namespace WikipediaHelperService.Helpers
         #endregion
 
         #region Private Methods
+        /// <summary>
+        /// Initializes the Http Client
+        /// </summary>
         private static void InitClient()
         {
             WikiClient = new HttpClient

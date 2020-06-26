@@ -23,6 +23,12 @@ namespace WikipediaHelperService.Helpers
         #endregion
 
         #region Private Methods
+        /// <summary>
+        /// Retrieves all the necessary information from the wikimedia api retun model 
+        /// and saves it to a smaller model
+        /// </summary>
+        /// <param name="article"></param>
+        /// <returns></returns>
         private static WikiArticleSanitizedModel SanitizeArticleModel(WikiArticleModel article)
         {
             WikiArticleSanitizedModel sanitized = new WikiArticleSanitizedModel();
@@ -38,6 +44,12 @@ namespace WikipediaHelperService.Helpers
         #endregion
 
         #region Public Methods
+        /// <summary>
+        /// loads the article information based on the search parameter from the
+        /// wikimedia api
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
         public static async Task<WikiArticleSanitizedModel> LoadArticleInfo(string search)
         {
             string completeURLParam = urlParameters + search;
