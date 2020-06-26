@@ -5,8 +5,9 @@ using System.Web;
 
 namespace WikipediaHelperService.Models
 {
-    public class DataObject
+    public class NormalizedModel
     {
-        public string Name { get; set; }
+        public string From { get; set; }
+        public string To { get; set; }
     }
 }

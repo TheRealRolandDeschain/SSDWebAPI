@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WikipediaHelperService.Helpers;
 using WikipediaHelperService.Models;
 
 namespace WikipediaHelperService.Controllers
@@ -18,10 +19,10 @@ namespace WikipediaHelperService.Controllers
         /// std Get request
         /// </summary>
         /// <returns></returns>
-        public List<string> Get(string search)
+        public WikiArticleSanitizedModel Get(string search)
         {
-            if (String.IsNullOrEmpty(search)) return null;
-            return WikiAPIAccessModel.MakeWikiRequest(search);
+            var result = WikiApiAccessHelper.LoadArticleInfo(search).Result;
+            return result;
         }
     }
 }
