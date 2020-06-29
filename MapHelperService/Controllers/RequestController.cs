@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WikiMediaHelperService.Helpers;
-using WikiMediaHelperService.Models;
 
-namespace WikiMediaHelperService.Controllers
+namespace MapHelperService.Controllers
 {
     /// <summary>
     /// Controller for all sanitized Wikipedia API requests
