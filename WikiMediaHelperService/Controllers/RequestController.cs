@@ -27,7 +27,7 @@ namespace WikiMediaHelperService.Controllers
         public WikiArticleSanitizedModel Get(string search)
         {
             if (string.IsNullOrEmpty(search)) return null;
-            var result = WikiApiAccessHelper.LoadArticleInfo(search).Result;
+            var result = WikiApiAccessHelper.LoadArticleInfo(search.Replace(" ", "%20")).Result;
             return result;
         }
 
