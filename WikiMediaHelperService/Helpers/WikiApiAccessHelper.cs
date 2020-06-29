@@ -67,7 +67,7 @@ namespace WikiMediaHelperService.Helpers
                 }
                 else
                 {
-                    Console.WriteLine("\n\n\n\n\n================ " + response.ReasonPhrase + "================\n\n\n\n\n");
+                    System.Diagnostics.Debug.WriteLine("\n\n\n\n\n================ " + response.ReasonPhrase + "================\n\n\n\n\n");
                     return null;
                 }
             }

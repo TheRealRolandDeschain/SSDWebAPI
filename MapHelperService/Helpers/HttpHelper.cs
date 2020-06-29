@@ -2,16 +2,16 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace WikiMediaHelperService.Helpers
+namespace MapHelperService.Helpers
 {
     public static class HttpHelper
     {
         #region Private Properties
-        private const string URL = "https://en.wikipedia.org/w/api.php/";
+        private const string URL = @"http://overpass-api.de/api/";
         #endregion
 
         #region Public Properties
-        public static HttpClient WikiClient { get; set; }
+        public static HttpClient MapClient { get; set; }
         #endregion
 
         #region Construtor
@@ -27,13 +27,14 @@ namespace WikiMediaHelperService.Helpers
         /// </summary>
         private static void InitClient()
         {
-            WikiClient = new HttpClient
+            MapClient = new HttpClient
             {
                 BaseAddress = new Uri(URL)
             };
-            WikiClient.DefaultRequestHeaders.Accept.Clear();
-            WikiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            MapClient.DefaultRequestHeaders.Accept.Clear();
+            MapClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
         #endregion
     }
 }
+

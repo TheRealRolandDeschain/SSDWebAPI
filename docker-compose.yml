@@ -1,0 +1,14 @@
+version: '3'
+services:
+    wikihelperservice:
+        build: 
+            dockerfile: ./WikiMediaHelperService/Dockerfile
+            context: .
+        ports: 
+            - "2000:80"
+    maphelperservice:
+        build: 
+            dockerfile: ./MapHelperService/Dockerfile
+            context: .
+        ports: 
+            - "2001:80"        

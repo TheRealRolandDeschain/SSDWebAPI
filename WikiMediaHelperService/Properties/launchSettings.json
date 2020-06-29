@@ -31,7 +31,7 @@
       "launchBrowser": false,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/request",
       "publishAllPorts": true,
-      "useSSL": true
+      "useSSL": false
     }
   }
 }

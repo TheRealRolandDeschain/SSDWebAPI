@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MapHelperService.Helpers;
+using MapHelperService.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -26,10 +28,23 @@ namespace MapHelperService.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public WikiArticleSanitizedModel Get(string search)
+        public List<ElementModel> Get(string longleft, string longright, string lattop, string latbottom)
         {
-            if (string.IsNullOrEmpty(search)) return null;
-            var result = WikiApiAccessHelper.LoadArticleInfo(search).Result;
+            if (String.IsNullOrEmpty(longleft)
+                || String.IsNullOrEmpty(longleft)
+                || String.IsNullOrEmpty(longleft)
+                || String.IsNullOrEmpty(longleft))
+            {
+                return null;
+            }
+            BboxModel bbox = new BboxModel
+            {
+                LongLeft = longleft,
+                LongRight = longright,
+                LatTop = lattop,
+                LatBottom = latbottom
+            };
+            List<ElementModel> result = MapAPIAccessHelper.LoadNodeInfo(bbox).Result;
             return result;
         }
 
