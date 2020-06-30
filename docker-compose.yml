@@ -18,3 +18,9 @@ services:
             context: .
         ports: 
             - "2002:80"              
+    celestialbodyhelperservice:
+        build: 
+            dockerfile: ./CelestialBodyHelperService/Dockerfile
+            context: .
+        ports: 
+            - "2003:80"    

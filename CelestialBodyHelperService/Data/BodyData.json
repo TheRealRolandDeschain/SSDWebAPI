@@ -1,0 +1,86 @@
+[
+    {
+        "Name": "Mercury",
+        "Type": "Planet",
+        "RightAscention": 281.01,
+        "Declination": 61.45,
+        "Magnitude": -2.48
+    },
+    {
+        "Name": "Venus",
+        "Type": "Planet",
+        "RightAscention": 272.76,
+        "Declination": 67.16,
+        "Magnitude": -4.92
+    },
+    {
+        "Name": "Mars",
+        "Type": "Planet",
+        "RightAscention": 317.68143,
+        "Declination": 52.88650,
+        "Magnitude": -2.94
+    },
+    {
+        "Name": "Jupiter",
+        "Type": "Planet",
+        "RightAscention": 268.057,
+        "Declination": 64.495,
+        "Magnitude": -2.94
+    },
+    {
+        "Name": "Saturn",
+        "Type": "Planet",
+        "RightAscention": 40.589,
+        "Declination": 83.537,
+        "Magnitude": -0.55
+    },
+    {
+        "Name": "Uranus",
+        "Type": "Planet",
+        "RightAscention": 257.311,
+        "Declination": -15.175,
+        "Magnitude": 5.38
+    },
+    {
+        "Name": "Neptune",
+        "Type": "Planet",
+        "RightAscention": 299.3,
+        "Declination": 42.950,
+        "Magnitude": 7.67
+    },
+    {
+        "Name": "Pluto",
+        "Type": "Dwarfplanet",
+        "RightAscention": 132.993,
+        "Declination": -6.163,
+        "Magnitude": 13.65
+    },
+    {
+        "Name": "Ceres",
+        "Type": "Dwarfplanet",
+        "RightAscention": 291.42744,
+        "Declination": 66.76033,
+        "Magnitude": 6.64
+    },
+    {
+        "Name": "Moon",
+        "Type": "Moon",
+        "RightAscention": 266.86,
+        "Declination": 65.64,
+        "Magnitude": -12.74
+    },
+    {
+        "Name": "Eagle Nebular",
+        "Type": "Nebula",
+        "RightAscention": 274.70,
+        "Declination": -13.49,
+        "Magnitude": -8.21
+    },
+    {
+        "Name": "Carina Nebular",
+        "Type": "Nebula",
+        "RightAscention": 161.3,
+        "Declination": -59.5204,
+        "Magnitude": 1.0
+    }
+]
