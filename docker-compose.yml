@@ -24,3 +24,10 @@ services:
             context: .
         ports: 
             - "2003:80"    
+    sqlserver:
+        build: 
+            context: ./SQLDatabase/
+            args:
+                PASSWORD: Pwd1234!
+        ports: 
+            - "2004:1433" 
