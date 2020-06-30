@@ -11,4 +11,10 @@ services:
             dockerfile: ./MapHelperService/Dockerfile
             context: .
         ports: 
-            - "2001:80"        
+            - "2001:80" 
+    weatherhelperservice:
+        build: 
+            dockerfile: ./WeatherHelperService/Dockerfile
+            context: .
+        ports: 
+            - "2002:80"              

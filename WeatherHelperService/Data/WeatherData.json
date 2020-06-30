@@ -1,0 +1,82 @@
+[
+    {
+        "weatherType": "clear",
+        "clouds": 3,
+        "sundown": false,
+        "windSpeed": 10,
+        "precipitateProperty": 2,
+        "humity": 20
+    },
+    {
+        "weatherType": "sunny",
+        "clouds": 0,
+        "sundown": false,
+        "windSpeed": 20,
+        "precipitateProperty": 0,
+        "humity": 10
+    },
+    {
+        "weatherType": "cloudy",
+        "clouds": 80,
+        "sundown": true,
+        "windSpeed": 30,
+        "precipitateProperty": 40,
+        "humity": 30
+    },
+    {
+        "weatherType": "snowy",
+        "clouds": 95,
+        "sundown": true,
+        "windSpeed": 50,
+        "precipitateProperty": 70,
+        "humity": 5
+    },
+    {
+        "weatherType": "clear",
+        "clouds": 0,
+        "sundown": true,
+        "windSpeed": 0,
+        "precipitateProperty": 0,
+        "humity": 5
+    },
+    {
+        "weatherType": "windy",
+        "clouds": 25,
+        "sundown": true,
+        "windSpeed": 70,
+        "precipitateProperty": 15,
+        "humity": 23
+    },
+    {
+        "weatherType": "rainy",
+        "clouds": 85,
+        "sundown": false,
+        "windSpeed": 22,
+        "precipitateProperty": 95,
+        "humity": 55
+    },
+    {
+        "weatherType": "rainy",
+        "clouds": 85,
+        "sundown": true,
+        "windSpeed": 22,
+        "precipitateProperty": 95,
+        "humity": 55
+    },
+    {
+        "weatherType": "windy",
+        "clouds": 25,
+        "sundown": false,
+        "windSpeed": 70,
+        "precipitateProperty": 15,
+        "humity": 23
+    },
+    {
+        "weatherType": "changing",
+        "clouds": 50,
+        "sundown": true,
+        "windSpeed": 10,
+        "precipitateProperty": 20,
+        "humity": 10
+    }
+]
