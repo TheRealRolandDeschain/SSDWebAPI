@@ -58,13 +58,23 @@
     <Folder Include="Properties" />
     <Folder Include="dbo" />
     <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="dbo\Views" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Stored Procedures\spGetSaltByUserName.sql" />
+    <Build Include="dbo\Tables\Locations.sql" />
+    <Build Include="dbo\Tables\CelestialBodies.sql" />
+    <Build Include="dbo\Stored Procedures\spAddUser.sql" />
+    <Build Include="dbo\Stored Procedures\spAuthorizeUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Dockerfile" />
     <None Include="local.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="SQLDatabase.refactorlog" />
   </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>xcopy /Y "$(TargetDir)$(TargetName).dacpac" "$(ProjectDir)"</PostBuildEvent>

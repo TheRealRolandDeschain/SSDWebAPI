@@ -29,5 +29,6 @@ services:
             context: ./SQLDatabase/
             args:
                 PASSWORD: Pwd1234!
+                DBNAME: SSDWebApiDb
         ports: 
             - "2004:1433" 

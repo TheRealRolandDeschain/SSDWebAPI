@@ -13,23 +13,38 @@ namespace AstroPhotographyHelperService.Controllers
     [Route("[controller]")]
     public class UsersController : ControllerBase
     {
-        private IUserService _userService;
+        #region Private Fields
+        private readonly IUserService userService;
+        #endregion
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService UserService)
         {
-            _userService = userService;
+            userService = UserService;
         }
 
         [AllowAnonymous]
         [HttpPost("authenticate")]
         public IActionResult Login([FromBody]AuthenticateRequestModel model)
         {
-            var response = _userService.Authenticate(model);
+            string response = userService.Authenticate(model);
 
             if (response == null)
                 return BadRequest(new { message = "Username or password is incorrect" });
 
             return Ok(response);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult CreateUser([FromBody]UserModel user)
+        {
+            string response = userService.CreateNewUser(user);
+
+            if (string.IsNullOrEmpty(response))
+                return BadRequest(new { message = "Invalid Parameters" });
+            else if (response == "-1")
+                return Conflict(new { message = "User already exists" });
+            return Ok("Success!");
         }
 
         [HttpGet]

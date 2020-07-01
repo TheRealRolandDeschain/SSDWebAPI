@@ -8,6 +8,7 @@ namespace AstroPhotographyHelperService.Interfaces
 {
     public interface IUserService
     {
-        AuthenticateResponseModel Authenticate(AuthenticateRequestModel model);
+        string Authenticate(AuthenticateRequestModel model);
+        string CreateNewUser(UserModel user);
     }
 }
