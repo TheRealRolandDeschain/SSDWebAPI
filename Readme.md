@@ -13,21 +13,29 @@ APIs are accessible with the following ports:
 - AstrophotographyHelperService (main service) => p:2005
 
 <h1>WikiMediaHelperService</h1>
-
-
+Uses a simple search term as input and returns sanitized article information. This information contains title, descriptions
+as well as the summary (first part of the article before sections start) and a url to the first image of the article. 
+Search input must match article title. 
 
 
 <h1>MapHelperService</h1>
+Uses four parameters consting of latitude and longitude information and span over a certain area 
+and returns all map nodes from OpenStreetMap which are usually light sources (villages, industrial, shops,...)
 
+Important: especially in city areas, if the search area is too big, the service could take a while, or 
+even refuses to response (timeout limit). 
 
 
 
 <h1>WeatherHelperService</h1>
-
+Dummy service, since for OpenWeatherMap extra registration would have been necessary. 
+The service has a bunch of presaved weather data stored in a json file and returns one randomly. 
+Input parameters of starttime, endtime, longitude and latitude are necessary nonetheless!
 
 
 <h1>CelestialBodyHelperService</h1>
-
+Dummy service as well. Has several models of celestial bodies stored in a json file and will return 
+them randomly as well. Again it still requires actual input parameters of Right Ascention, Declination and a searchangle. 
 
 
 
@@ -54,3 +62,5 @@ Database project temporarily
 - Controller Methods in Asp.NET project can either return IActionResult or the actual datatype one has to return. IActionResult has the 
 advantage that one can control HTTP codes, which are returned directly, but on the other hand the code gets harder to read, since it is 
 not immediately obvious what should be returned. 
+
+- Problems with .dockerignore which turned out to be problems of COPY . . 
