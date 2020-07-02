@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "643605c6-db9c-4dee-898f-a84b4c23e1ef",
+		"name": "CelestialBodyHelperService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Simple Connectiontest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2003/request/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2003",
+					"path": [
+						"request",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CelestialBodyHelperService test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2003/request/?ra=22.153&de=-13.78&angle=22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2003",
+					"path": [
+						"request",
+						""
+					],
+					"query": [
+						{
+							"key": "ra",
+							"value": "22.153"
+						},
+						{
+							"key": "de",
+							"value": "-13.78"
+						},
+						{
+							"key": "angle",
+							"value": "22"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

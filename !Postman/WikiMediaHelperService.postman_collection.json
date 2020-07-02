@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "6147d10b-38cb-456d-b4a7-82c4fd72f6cd",
+		"name": "WikiMediaHelperService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Simple Access Test Docker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2000/request/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"request",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test with search parameter - docker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2000/request?search=earth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"request"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "earth"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

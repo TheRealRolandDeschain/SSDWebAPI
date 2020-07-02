@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using AstroPhotographyHelperService.Helpers;
 using AstroPhotographyHelperService.Interfaces;
@@ -21,6 +22,11 @@ namespace AstroPhotographyHelperService
         {
             Configuration = configuration;
             AppConfigHelper.Configuration = configuration;
+            var cultureInfo = new CultureInfo("en-US");
+            cultureInfo.NumberFormat.CurrencySymbol = "€";
+
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -56,6 +62,8 @@ namespace AstroPhotographyHelperService
 
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IDatabaseService, DatabaseService>();
+            services.AddScoped<ILocationRequestService, LocationRequestService>();
             services.AddScoped<SecurityHandler>();
             services.AddSingleton<IConfiguration>(Configuration);
         }

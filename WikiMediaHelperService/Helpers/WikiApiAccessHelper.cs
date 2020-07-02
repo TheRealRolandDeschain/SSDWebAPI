@@ -30,13 +30,13 @@ namespace WikiMediaHelperService.Helpers
         {
             WikiArticleSanitizedModel sanitized = new WikiArticleSanitizedModel();
             var page = article.Query.Pages.FirstOrDefault().Value;
-            sanitized.Title = (page.Title != null) ? page.Title : "none";
+            sanitized.Title = page.Title ?? "none";
             sanitized.PageId = page.PageId;
-            sanitized.Description = (page.Description != null) ? page.Description : "none";
-            sanitized.Summary = (page.Extract != null) ? page.Extract : "none";
+            sanitized.Description = page.Description ?? "none";
+            sanitized.Summary = page.Extract ?? "none";
             if (page.Original != null)
             {
-                sanitized.ImageUrl = (page.Original.Source != null) ? page.Original.Source : "none";
+                sanitized.ImageUrl = page.Original.Source ?? "none";
             }
             else
             {
@@ -57,19 +57,17 @@ namespace WikiMediaHelperService.Helpers
         public static async Task<WikiArticleSanitizedModel> LoadArticleInfo(string search)
         {
             string completeURLParam = urlParameters + search;
-            using (HttpResponseMessage response = await HttpHelper.WikiClient.GetAsync(completeURLParam).ConfigureAwait(false))
+            using HttpResponseMessage response = await HttpHelper.WikiClient.GetAsync(completeURLParam).ConfigureAwait(false);
+            if (response.IsSuccessStatusCode)
             {
-                if (response.IsSuccessStatusCode)
-                {
-                    string articleString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    WikiArticleModel article = JsonConvert.DeserializeObject<WikiArticleModel>(articleString);
-                    return SanitizeArticleModel(article);
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine("\n\n\n\n\n================ " + response.ReasonPhrase + "================\n\n\n\n\n");
-                    return null;
-                }
+                string articleString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                WikiArticleModel article = JsonConvert.DeserializeObject<WikiArticleModel>(articleString);
+                return SanitizeArticleModel(article);
+            }
+            else
+            {
+                //System.Diagnostics.Debug.WriteLine("\n\n\n\n\n================ " + response.ReasonPhrase + "================\n\n\n\n\n");
+                return null;
             }
         }
         #endregion

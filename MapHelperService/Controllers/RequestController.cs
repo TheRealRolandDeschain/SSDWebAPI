@@ -56,7 +56,7 @@ namespace MapHelperService.Controllers
         [HttpGet("test")]
         public string SimpleTest()
         {
-            return "success";
+            return "Hello From MapHelperService!";
         }
     }
 }

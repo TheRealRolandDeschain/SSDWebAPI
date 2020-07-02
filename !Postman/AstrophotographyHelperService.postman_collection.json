@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "d67078e1-2d08-4720-9e57-f118b0397485",
+		"name": "AstrophotographyHelperService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"Max\",\r\n    \"FirstName\": \"Maximilian\",\r\n    \"LastName\": \"Mustermann\",\r\n    \"Email\": \"max.mustermann@gmx.at\",\r\n    \"Password\": \"asdf234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2005/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"Max\",\r\n    \"Password\": \"asdf234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2005/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2005/users/Max",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"users",
+						"Max"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user by username",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1heCIsIm5iZiI6MTU5MzY4NjcyNCwiZXhwIjoxNTkzNjkzOTI0LCJpYXQiOjE1OTM2ODY3MjR9.fKV8apl2z7X3ek0BUaKTh8fH0J5JoADKA5XHfkmcJSY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Max\",\r\n    \"firstName\": \"Maximilian\",\r\n    \"lastName\": \"Mustermann\",\r\n    \"email\": \"mustermann.max@gmx.de\",\r\n    \"password\": \"jkl+4321\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2005/users/Max",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"users",
+						"Max"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user by username",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1heCIsIm5iZiI6MTU5MzY4NjcyNCwiZXhwIjoxNTkzNjkzOTI0LCJpYXQiOjE1OTM2ODY3MjR9.fKV8apl2z7X3ek0BUaKTh8fH0J5JoADKA5XHfkmcJSY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2005/users/Max",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"users",
+						"Max"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new location",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1heCIsIm5iZiI6MTU5MzcwMjAzMSwiZXhwIjoxNTkzNzA5MjMxLCJpYXQiOjE1OTM3MDIwMzF9.LIy0yWGfUfD66mazGxNbaYJQ9BuWciso7RhdDzaoIBQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": null,\r\n  \"name\": \"mynewloc\",\r\n  \"description\": \"this is an awesome new location\",\r\n  \"longitude\": -13.543,\r\n  \"latitude\": 23.4863,\r\n  \"celestialBody\": {\r\n  \"name\": \"Jupiter\",\r\n  \"type\": \"Planet\",\r\n  \"imageUrl\": \"imgure.com/mypictureofjupiter\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2005/database",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"database"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get location by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2005/database/mynewloc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"database",
+						"mynewloc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get location by area (successful with parameters from other postman tests)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2005/database/?longleft=-14&longright=-12&lattop=24&latbottom=22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"database",
+						""
+					],
+					"query": [
+						{
+							"key": "longleft",
+							"value": "-14"
+						},
+						{
+							"key": "longright",
+							"value": "-12"
+						},
+						{
+							"key": "lattop",
+							"value": "24"
+						},
+						{
+							"key": "latbottom",
+							"value": "22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get location by area (unsuccessful with parameters from other postman tests)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2005/database/?longleft=-12&longright=-14&lattop=24&latbottom=22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"database",
+						""
+					],
+					"query": [
+						{
+							"key": "longleft",
+							"value": "-12"
+						},
+						{
+							"key": "longright",
+							"value": "-14"
+						},
+						{
+							"key": "lattop",
+							"value": "24"
+						},
+						{
+							"key": "latbottom",
+							"value": "22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new location part 2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1heCIsIm5iZiI6MTU5MzcwMjAzMSwiZXhwIjoxNTkzNzA5MjMxLCJpYXQiOjE1OTM3MDIwMzF9.LIy0yWGfUfD66mazGxNbaYJQ9BuWciso7RhdDzaoIBQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": null,\r\n  \"name\": \"also new\",\r\n  \"description\": \"my other location is also not too bad\",\r\n  \"longitude\": 13.543,\r\n  \"latitude\": 33.4863,\r\n  \"celestialBody\": {\r\n  \"name\": \"Saturn\",\r\n  \"type\": \"Planet\",\r\n  \"imageUrl\": \"imgure.com/mypictureofsaturn\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2005/database",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"database"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new location part 3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1heCIsIm5iZiI6MTU5MzcwMjAzMSwiZXhwIjoxNTkzNzA5MjMxLCJpYXQiOjE1OTM3MDIwMzF9.LIy0yWGfUfD66mazGxNbaYJQ9BuWciso7RhdDzaoIBQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": null,\r\n  \"name\": \"third loc, but also with jupiter\",\r\n  \"description\": \"this is to test the celest body table in the database\",\r\n  \"longitude\": -3.543,\r\n  \"latitude\": 2.578,\r\n  \"celestialBody\": {\r\n  \"name\": \"Jupiter\",\r\n  \"type\": \"Planet\",\r\n  \"imageUrl\": \"imgure.com/mypictureofjupiter\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2005/database",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"database"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get location by area (get all locations with bigger area)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2005/database/?longleft=-14&longright=15&lattop=35&latbottom=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"database",
+						""
+					],
+					"query": [
+						{
+							"key": "longleft",
+							"value": "-14"
+						},
+						{
+							"key": "longright",
+							"value": "15"
+						},
+						{
+							"key": "lattop",
+							"value": "35"
+						},
+						{
+							"key": "latbottom",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete location by name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1heCIsIm5iZiI6MTU5MzcwMjAzMSwiZXhwIjoxNTkzNzA5MjMxLCJpYXQiOjE1OTM3MDIwMzF9.LIy0yWGfUfD66mazGxNbaYJQ9BuWciso7RhdDzaoIBQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2005/database/also new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"database",
+						"also new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New User par2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"Sammy\",\r\n    \"FirstName\": \"Sam\",\r\n    \"LastName\": \"Smith\",\r\n    \"Email\": \"sam.smith@gmx.at\",\r\n    \"Password\": \"jkl098\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2005/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login 2nd User ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"Sammy\",\r\n    \"Password\": \"jkl098\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2005/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Standard Request for good Locations",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"longitude\": 15.3,\r\n  \"latitude\": 46.98,\r\n  \"range\": 10,\r\n  \"startTime\": \"2020-07-02T20:00:00.0\",\r\n  \"endTime\": \"2020-07-03T08:00:00.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2005/request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simple Connection Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2005/request/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2005",
+					"path": [
+						"request",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

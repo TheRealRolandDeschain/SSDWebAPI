@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AstroPhotographyHelperService.Interfaces;
+using AstroPhotographyHelperService.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -11,22 +13,31 @@ namespace AstroPhotographyHelperService.Controllers
     [Route("[controller]")]
     public class RequestController : ControllerBase
     {
-        //private static readonly string[] Summaries = new[]
-        //{
-        //    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        //};
 
-        //private readonly ILogger<RequestController> _logger;
+        #region Private Fields
+        private readonly ILocationRequestService lrService;
+        #endregion
 
-        //public RequestController(ILogger<RequestController> logger)
-        //{
-        //    _logger = logger;
-        //}
+        public RequestController(ILocationRequestService locationRequestService)
+        {
+            lrService = locationRequestService;
+        }
 
         [HttpGet]
-        public string Get()
+        public RequestResponseModel GetBestLocations([FromBody] LocationRequestModel request)
         {
-            return "Hello World";
+            if (request.Range > 50) return null;
+            return lrService.GetBestLocationsFromRequest(request);
+        }
+
+        /// <summary>
+        /// Just to test if API can be accessed
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("test")]
+        public string SimpleTest()
+        {
+            return "Hello from the AstrophotographyHelperService!";
         }
     }
 }

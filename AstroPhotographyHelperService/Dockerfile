@@ -1,6 +1,5 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
+RUN apt-get update && apt-get install -y libgdiplus
 WORKDIR /app
 EXPOSE 80
 
@@ -15,7 +14,9 @@ RUN dotnet build "AstroPhotographyHelperService.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "AstroPhotographyHelperService.csproj" -c Release -o /app/publish
 
+
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY ["AstroPhotographyHelperService/Data/", "./Data/"]
 ENTRYPOINT ["dotnet", "AstroPhotographyHelperService.dll"]

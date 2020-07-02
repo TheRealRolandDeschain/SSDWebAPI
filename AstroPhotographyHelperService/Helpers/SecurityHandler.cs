@@ -1,10 +1,7 @@
 ﻿using AstroPhotographyHelperService.Models;
 using System;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Options;
@@ -64,10 +61,8 @@ namespace AstroPhotographyHelperService.Helpers
             {
                 // generate a 128-bit salt using a secure PRNG
                 salt = new byte[128 / 8];
-                using (var rng = RandomNumberGenerator.Create())
-                {
-                    rng.GetBytes(salt);
-                }
+                using var rng = RandomNumberGenerator.Create();
+                rng.GetBytes(salt);
             }
             else
             {

@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "9f3cc3a6-dae7-41bf-91c6-2734d7e8fd8d",
+		"name": "WeatherHelperService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Simple Connectiontest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2002/request/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"request",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WeatherRequest Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2002/request?starttime=2020-07-02T20:00:00.0&endtime=2020-07-03T08:00:00.0&latitude=13.51&longitude=-11.5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"request"
+					],
+					"query": [
+						{
+							"key": "starttime",
+							"value": "2020-07-02T20:00:00.0"
+						},
+						{
+							"key": "endtime",
+							"value": "2020-07-03T08:00:00.0"
+						},
+						{
+							"key": "latitude",
+							"value": "13.51"
+						},
+						{
+							"key": "longitude",
+							"value": "-11.5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -68,6 +68,13 @@
     <Build Include="dbo\Tables\CelestialBodies.sql" />
     <Build Include="dbo\Stored Procedures\spAddUser.sql" />
     <Build Include="dbo\Stored Procedures\spAuthorizeUser.sql" />
+    <Build Include="dbo\Stored Procedures\spGetUserByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\spUpdateUserByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\spDeleteUserByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\spAddLocation.sql" />
+    <Build Include="dbo\Stored Procedures\spGetLocationsByArea.sql" />
+    <Build Include="dbo\Stored Procedures\spGetLocationsByName.sql" />
+    <Build Include="dbo\Stored Procedures\spDeleteLocationByName.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Dockerfile" />

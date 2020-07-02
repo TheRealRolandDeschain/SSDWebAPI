@@ -34,7 +34,7 @@ namespace WeatherHelperService.Controllers
         [HttpGet("test")]
         public string SimpleTest()
         {
-            return "success";
+            return "Hello from the WeatherHelperService!";
         }
     }
 }

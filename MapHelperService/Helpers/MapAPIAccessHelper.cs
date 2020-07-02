@@ -43,19 +43,16 @@ namespace MapHelperService.Helpers
         public static async Task<List<ElementModel>> LoadNodeInfo(BboxModel bbox)
         {
             string completeURLParam = urlParameters_begin + bbox.GetParameterString() + urlParameters_end;
-            using (HttpResponseMessage response = await HttpHelper.MapClient.GetAsync(completeURLParam).ConfigureAwait(false))
+            using HttpResponseMessage response = await HttpHelper.MapClient.GetAsync(completeURLParam).ConfigureAwait(false);
+            if (response.IsSuccessStatusCode)
             {
-                if (response.IsSuccessStatusCode)
-                {
-                    string articleString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    MapNodesModel nodes = JsonConvert.DeserializeObject<MapNodesModel>(articleString);
-                    return SanitizeNodesModel(nodes);
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine("\n\n\n\n\n================ " + response.ReasonPhrase + " ================\n\n\n\n\n");
-                    return null;
-                }
+                string articleString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                MapNodesModel nodes = JsonConvert.DeserializeObject<MapNodesModel>(articleString);
+                return SanitizeNodesModel(nodes);
+            }
+            else
+            {
+                return null;
             }
         }
         #endregion

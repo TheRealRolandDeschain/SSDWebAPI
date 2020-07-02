@@ -10,5 +10,8 @@ namespace AstroPhotographyHelperService.Interfaces
     {
         string Authenticate(AuthenticateRequestModel model);
         string CreateNewUser(UserModel user);
+        UserModel GetUserByUserName(string username);
+        string UpdateUserByUserName(UserModel user);
+        string DeleteUserByUserName(string username);
     }
 }

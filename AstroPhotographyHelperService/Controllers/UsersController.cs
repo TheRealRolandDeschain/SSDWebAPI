@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using AstroPhotographyHelperService.Services;
 using AstroPhotographyHelperService.Models;
 using AstroPhotographyHelperService.Interfaces;
-using System.Security.Claims;
 
 namespace AstroPhotographyHelperService.Controllers
 {
@@ -23,7 +21,7 @@ namespace AstroPhotographyHelperService.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("authenticate")]
+        [HttpPost("login")]
         public IActionResult Login([FromBody]AuthenticateRequestModel model)
         {
             string response = userService.Authenticate(model);
@@ -40,18 +38,45 @@ namespace AstroPhotographyHelperService.Controllers
         {
             string response = userService.CreateNewUser(user);
 
-            if (string.IsNullOrEmpty(response))
+            if (string.IsNullOrWhiteSpace(response))
                 return BadRequest(new { message = "Invalid Parameters" });
             else if (response == "-1")
                 return Conflict(new { message = "User already exists" });
             return Ok("Success!");
         }
 
-        [HttpGet]
-        public string Test()
+        [HttpGet("{username}")]
+        public UserModel GetUserByUserName(string username)
         {
-            return User.Identity.Name;
+            if (User.Identity.Name != username) return null;
+            UserModel user = userService.GetUserByUserName(username);
+
+            return user;
         }
 
+        [HttpPut("{username}")]
+        public IActionResult UpdateUserByUserName([FromBody]UserModel user)
+        {
+            if (User.Identity.Name != user.Username) return null;
+
+            string response = userService.UpdateUserByUserName(user);
+
+            if (string.IsNullOrWhiteSpace(response))
+                return BadRequest(new { message = "Invalid Parameters" });
+            else if (response == "-1")
+                return Conflict(new { message = "User doesn't exists" });
+            return Ok(new { message = $"Successfully updated user {user.Username}" });
+        }
+
+        [HttpDelete("{username}")]
+        public IActionResult DeleteUserByUserName(string username)
+        {
+            if (User.Identity.Name != username) return null;
+            string response = userService.DeleteUserByUserName(username);
+
+            if (response == "-1")
+                return Conflict(new { message = "User doesn't exists" });
+            return Ok(new { message = $"Successfully deleted user {username}" });
+        }
     }
 }

@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "cbd165e6-e567-46fe-bc73-3765d91bc449",
+		"name": "MapHelperService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Find map nodes in an ara of graz",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2001/request?longleft=15.217534&longright=15.511327&lattop=47.021315&latbottom=46.959413",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2001",
+					"path": [
+						"request"
+					],
+					"query": [
+						{
+							"key": "longleft",
+							"value": "15.217534"
+						},
+						{
+							"key": "longright",
+							"value": "15.511327"
+						},
+						{
+							"key": "lattop",
+							"value": "47.021315"
+						},
+						{
+							"key": "latbottom",
+							"value": "46.959413"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simple Connectiontest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2001/request/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2001",
+					"path": [
+						"request",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -32,3 +32,11 @@ services:
                 DBNAME: SSDWebApiDb
         ports: 
             - "2004:1433" 
+    astrophotographyhelperservice:
+        build: 
+            dockerfile: ./AstroPhotographyHelperService/Dockerfile
+            context: .
+        ports: 
+            - "2005:80"    
+        depends_on: 
+            - sqlserver

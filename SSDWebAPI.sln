@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WikiMediaHelperService", "W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapHelperService", "MapHelperService\MapHelperService.csproj", "{738F99A5-A691-4B05-B324-6B7E2CAF169D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherHelperService", "WeatherHelperService\WeatherHelperService.csproj", "{ECDF8F14-7644-4F13-81A1-6A721860EA51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherHelperService", "WeatherHelperService\WeatherHelperService.csproj", "{ECDF8F14-7644-4F13-81A1-6A721860EA51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelestialBodyHelperService", "CelestialBodyHelperService\CelestialBodyHelperService.csproj", "{0D7EDDB8-E864-4980-8C25-13BA84EA0DC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CelestialBodyHelperService", "CelestialBodyHelperService\CelestialBodyHelperService.csproj", "{0D7EDDB8-E864-4980-8C25-13BA84EA0DC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroPhotographyHelperService", "AstroPhotographyHelperService\AstroPhotographyHelperService.csproj", "{6D8C4149-535F-4C29-8699-421908AF47E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AstroPhotographyHelperService", "AstroPhotographyHelperService\AstroPhotographyHelperService.csproj", "{6D8C4149-535F-4C29-8699-421908AF47E2}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SQLDatabase", "SQLDatabase\SQLDatabase.sqlproj", "{16B96A79-D1CF-4BB5-9F87-B3B47B00C69A}"
 EndProject
